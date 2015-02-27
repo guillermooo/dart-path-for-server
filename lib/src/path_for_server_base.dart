@@ -1,8 +1,6 @@
 // Copyright (c) 2015, Guillermo López-Anglada. All rights reserved. Use of this source code
 // is governed by a BSD-style license that can be found in the LICENSE file.
 
-// TODO: Put public facing types in this file.
-
 library path_for_server.base;
 
 import 'dart:io';
@@ -13,11 +11,6 @@ final RegExp unixEnvironmentVariable = new RegExp(r'^\$.*$');
 final RegExp windowsEnvironmentVariable = new RegExp(r'^%.*%$');
 final RegExp variableNameRegExp = new RegExp(r'^[\$%](.*?)%?$');
 
-/// Expands environment variables in [filePath].
-///
-/// On Windows, $NAME as well as %NAME% variables will be expanded.
-/// The '~' symbol will also be expanded on all platforms, but only if
-/// it is the first component in [filePath].
 String expand_variables(String filePath) {
   assert(filePath != null);
   var segments = path.split(filePath);
