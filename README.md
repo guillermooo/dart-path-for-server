@@ -1,6 +1,6 @@
 # path_for_server
 
-A library for Dart developers. It is awesome.
+Additional path handling functions for server applications.
 
 ## Usage
 
@@ -8,12 +8,10 @@ A simple usage example:
 
     import 'package:path_for_server/path_for_server.dart';
 
-    main() {
-      var awesome = new Awesome();
-    }
+    print(expand_variables('~/some/path');
 
 ## Features and bugs
 
 Please file feature requests and bugs at the [issue tracker][tracker].
 
-[tracker]: http://example.com/issues/replaceme
+[tracker]: https://github.com/guillermooo/dart-path-for-server/issues/
