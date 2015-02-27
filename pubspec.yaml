@@ -1,0 +1,9 @@
+name: path_for_server
+description: >
+  Additional path handling functions for server applications.
+version: 0.0.1
+author: Guillermo López-Anglada <guillermo.lopez@outlook.com>
+dependencies:
+  path: any
+dev_dependencies:
+  unittest: any
