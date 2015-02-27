@@ -1,9 +1,10 @@
 name: path_for_server
+homepage: https://github.com/guillermooo/dart-path-for-server
 description: >
   Additional path handling functions for server applications.
 version: 0.0.1
 author: Guillermo López-Anglada <guillermo.lopez@outlook.com>
 dependencies:
-  path: any
+  path: ">=1.3.3 <2.0.0"
 dev_dependencies:
   unittest: any
