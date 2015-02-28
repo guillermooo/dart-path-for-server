@@ -17,7 +17,7 @@ main() {
 
       test("that we can expand '~'", () {
         var actual = expand_variables(r'~/cat/dog');
-        var expected = path.join(Platform.environment['USER'], "cat/dog");
+        var expected = path.join(Platform.environment['HOME'], "cat/dog");
         expect(expected, equals(actual));
       });
 
@@ -28,27 +28,25 @@ main() {
       });
 
       test("that we can expand '\$HOME' as first component", () {
-        var actual = expand_variables('\$HOME\\cat\\dog');
-        var expected = path.join(Platform.environment['HOME'], "cat\\dog");
+        var actual = expand_variables('\$HOME/cat/dog');
+        var expected = path.join(Platform.environment['HOME'], "cat/dog");
         expect(actual, equals(expected));
       });
 
       test("that we can expand '\$USER' as non-first component", () {
-        var actual = expand_variables('hello\\\$USER\\cat\\dog');
-        var expected = path.join('hello', Platform.environment['USER'], "cat\\dog");
+        var actual = expand_variables('hello/\$USER/cat/dog');
+        var expected = path.join('hello', Platform.environment['USER'], "cat/dog");
         expect(actual, equals(expected));
       });
 
       test("that we cannot expand '%USER%' as first component", () {
-        var actual = expand_variables('%USER%\\cat\\dog');
-        var expected = path.join(Platform.environment['USER'], "cat\\dog");
-        expect(actual, equals(expected));
+        var actual = expand_variables('%USER%/cat/dog');
+        expect("%USER%/cat/dog", equals(actual));
       });
 
       test("that we cannot expand '%USER%' as non-first component", () {
-        var actual = expand_variables('hello\\%USER%\\cat\\dog');
-        var expected = path.join('hello', Platform.environment['USER'], "cat\\dog");
-        expect(actual, equals(expected));
+        var actual = expand_variables('hello/%USER%/cat/dog');
+        expect('hello/%USER%/cat/dog', equals(actual));
       });
       
     });

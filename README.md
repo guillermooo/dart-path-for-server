@@ -1,3 +1,5 @@
+[![Build Status](https://drone.io/github.com/guillermooo/dart-path-for-server/status.png)](https://drone.io/github.com/guillermooo/dart-path-for-server/latest)
+
 # path_for_server
 
 Additional path handling functions for server applications.
